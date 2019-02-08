@@ -689,7 +689,7 @@ def object_diff(a, b, pre=''):
     elif a is None:
         if b is not None:
             out += pre + ' left is None, right is not (%s)\n' % (b)
-    elif isinstance(a, np.ndarray):
+    elif isinstance(a, (np.ndarray, np.generic)):
         if not np.array_equal(a, b):
             out += pre + ' array mismatch\n'
     elif isinstance(a, (StringIO, BytesIO)):

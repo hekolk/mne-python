@@ -287,7 +287,8 @@ def test_hash():
     # does hashing all of these types work:
     # {dict, list, tuple, ndarray, str, float, int, None}
     d0 = dict(a=dict(a=0.1, b='fo', c=1), b=[1, 'b'], c=(), d=np.ones(3),
-              e=None)
+              e=None, f=np.dtype('int64').type(3),
+              g=np.dtype('bool').type(False))
     d0[1] = None
     d0[2.] = b'123'
 
